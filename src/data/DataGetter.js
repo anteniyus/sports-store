@@ -7,6 +7,9 @@ export class DataGetter extends Component {
         return <React.Fragment>{ children }</React.Fragment>
     }
 
+    componentDidMount = () => this.getData();
+    componentDidUpdate = () => this.getData();
+
     getData = () => {
         const { products_params, pageSize, sortKey, match, loadData } = this.props;
         const dsData = products_params || {};
