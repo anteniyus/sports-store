@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import { CategoryNavigation } from "./CategoryNavigation";
 import { ProductList } from "./ProductList";
-import {CartSummary} from "./CartSummary";
+import { CartSummary } from "./CartSummary";
 
 export class Shop extends Component {
+    handleAddToCart = (...args) => {
+        this.props.addToCart(...args);
+        this.props.history.push("/shop/cart");
+    }
+
     render() {
-        const { categories, products, addToCart } = this.props;
+        const { categories, products } = this.props;
 
         return <div className="container-fluid">
             <div className="row">
@@ -17,11 +22,11 @@ export class Shop extends Component {
 
             <div className="row">
                 <div className="col-3 p-2">
-                    <CategoryNavigation baseUrl="/shop/products" categories={categories} />
+                    <CategoryNavigation baseUrl="/shop/products" categories={ categories } />
                 </div>
 
                 <div className="col-9 p-2">
-                    <ProductList products={products} addToCart={ addToCart }/>
+                    <ProductList products={ products } addToCart={ this.handleAddToCart }/>
                 </div>
             </div>
         </div>;
