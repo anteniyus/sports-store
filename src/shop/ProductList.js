@@ -2,10 +2,13 @@ import React, {Component} from "react";
 
 export class ProductList extends Component{
     render() {
-        if(this.props.products == null || this.props.products.length === 0)
+
+        const { products } = this.props;
+
+        if(products == null || products.length === 0)
             return <h5 className="p-2">No Products</h5>
 
-        return this.props.products.map(product =>
+        return products.map(product =>
             <div className="card m-1 p-1 bg-light" key={product.id}>
                 <h4>
                     {product.name}
