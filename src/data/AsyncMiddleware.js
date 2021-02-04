@@ -2,7 +2,7 @@ const isPromise = (payload) => (typeof(payload) === "object" || typeof(payload) 
 
 export const asyncActions = () => (next) => (action) => {
     if(isPromise(action.payload))
-        action.payload.then(result => next({...action, payload: result}));
+        action.payload.then(result => next({ ...action, payload: result }));
     else
         next(action);
 }
