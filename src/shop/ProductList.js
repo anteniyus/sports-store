@@ -2,7 +2,6 @@ import React, {Component} from "react";
 
 export class ProductList extends Component{
     render() {
-
         const { products } = this.props;
 
         if(products == null || products.length === 0)
