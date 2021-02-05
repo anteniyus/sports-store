@@ -6,7 +6,7 @@ export class CategoryNavigation extends Component{
         const { baseUrl, categories } = this.props;
 
         return <React.Fragment>
-            <ToggleLink to={ baseUrl } exact={ true }>All</ToggleLink>
+            <ToggleLink to={ `${baseUrl}/all` } exact={ false }>All</ToggleLink>
             {
                 categories && categories.map(category =>
                     <ToggleLink key={category} to={`${baseUrl}/${category.toLowerCase()}`}>

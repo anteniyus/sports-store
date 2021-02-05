@@ -17,6 +17,8 @@ export class ToggleLink extends Component {
                           return <Link to={ this.props.to } className={ combinedClasses }>
                               { this.props.children }
                           </Link>
-                      }} />
+                        }
+                      }
+                />
+        }
     }
-}
